@@ -2,10 +2,18 @@
 //
 
 #include <iostream>
+#include <string>
+
+using namespace std;
 
 int main()
 {
-	std::cout << "Hello World!" << std::endl;
+	string txt;
+
+	cout << "Vneste text: " << endl;
+
+	getline(cin, txt);
+	cout << "Bol vneseny text:  " << txt << endl;
 
 	return 0;
 }
