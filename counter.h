@@ -4,6 +4,11 @@
 
 using namespace std;
 
+void count(Word *input) {
+
+
+}
+
 // funkcia na pocitanie pismen
 int count_letters(string input)
 {

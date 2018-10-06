@@ -10,9 +10,16 @@
 
 using namespace std;
 
+typedef struct Word {
+	string text;
+	int letters;
+	int words;
+	int lines;
+};
+
 int main(int argc, char **argv)
 {
-	string input;
+	Word input;
 
 	// v pripade ak nie je vneseny prepinac alebo je viac vstupnych parametrov
 	if (argc == 1 || argc > 3) {
@@ -35,9 +42,10 @@ int main(int argc, char **argv)
 		else {
 			cout << "Vneste text: " << endl;
 
-			getline(cin, input);
+			getline(cin, input.text);
+			count(&input);
 
-			cout << "Pocet pismen v texte je: " << count_letters(input) << endl;
+			cout << "Pocet pismen v texte je: " << input.letters << endl;
 		}
 		return 0;
 	}
