@@ -4,11 +4,6 @@
 
 using namespace std;
 
-void count(Word *input) {
-
-
-}
-
 // funkcia na pocitanie pismen
 int count_letters(string input)
 {
@@ -44,8 +39,14 @@ int count_words(string input)
 }
 
 // funkcia na pocitanie riadkov
-//int count_lines(string input)
-//{
+int count_lines(string input)
+{
+	int n = 1;
+	for (int i = 0; i < input.size(); i++) {
+		if (input[i] == 10) {
+			n++;
+		}
+	}
 
-	//return n;
-//}
+	return n;
+}

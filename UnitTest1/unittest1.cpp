@@ -2,11 +2,29 @@
 
 #define CATCH_CONFIG_MAIN
 #include "include/catch.hpp"
+#include <string>
 
-#include "C:/Users/Lenovo/Desktop/Fakulta/ZS_2018-2019/tvorba_softverovych_systemov/concole_app_count_char/counter.h"
+#include "../counter.h"
 
 TEST_CASE("Popis", "Skrateny nazov") {
-	string test = "abc";
-	REQUIRE(count_letters(test) == 3);
+	std::string text = "abc";
+	REQUIRE(count_letters(text) == 3);
 
+	text = "abc abc";
+	REQUIRE(count_letters(text) == 6);
+
+	text = "";
+	REQUIRE(count_letters(text) == 0);
+
+	text = "abc";
+	REQUIRE(count_words(text) == 1);
+
+	text = "abc abc";
+	REQUIRE(count_words(text) == 2);
+
+	text = "abc";
+	REQUIRE(count_lines(text) == 1);
+
+	text = "abc \n abc";
+	REQUIRE(count_lines(text) == 2);
 }
