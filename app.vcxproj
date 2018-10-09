@@ -143,7 +143,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Word.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
@@ -151,7 +150,6 @@
   <ItemGroup>
     <ClInclude Include="counter.h" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="Word.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc" />

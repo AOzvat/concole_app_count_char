@@ -7,15 +7,12 @@
 #include <algorithm>
 #include <iterator>
 #include "counter.h"
-#include "Word.h"
 
 using namespace std;
 
 int main(int argc, char **argv)
 {
 	string input;
-	// dorobit to cez triedu?
-	Word word;
 
 	// v pripade ak nie je vneseny prepinac alebo je viac vstupnych parametrov
 	if (argc == 1 || argc > 3) {
@@ -40,7 +37,8 @@ int main(int argc, char **argv)
 
 			getline(cin, input);
 
-			cout << "Pocet pismen v texte je: " << count_letters(input) << endl;
+			//cout << "Pocet pismen v texte je: " << count_letters(input) << endl;
+			cout << "Pocet pismen v texte je: " << count <_letter>(input) << endl;
 		}
 		return 0;
 	}
@@ -61,7 +59,8 @@ int main(int argc, char **argv)
 
 			getline(cin, input);
 
-			cout << "Pocet slov v texte je: " << count_words(input) << endl;
+			//cout << "Pocet slov v texte je: " << count_words(input) << endl;
+			cout << "Pocet slov v texte je: " << count <_word>(input) << endl;
 		}
 
 		return 0;
@@ -88,7 +87,8 @@ int main(int argc, char **argv)
 				input += ch;
 			}
 			
-			cout << "Pocet riadkov v texte je: " << count_lines(input)<< endl;
+			//cout << "Pocet riadkov v texte je: " << count_lines(input)<< endl;
+			cout << "Pocet riadkov v texte je: " << count <_line>(input) << endl;
 		};
 	}
 	// ak je vneseny nespravny prepinac
