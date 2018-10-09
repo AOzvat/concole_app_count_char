@@ -4,12 +4,16 @@
 
 using namespace std;
 
-typedef struct _letter {
-	static int count(string input) {
+typedef struct _letter : public string {
+	// funkcie
+	_letter(string input) : string (input) {
+	}
+
+	int count() {
 		int n = 0;
 
-		for (int i = 0; i < input.size(); i++) {
-			if (!isspace(input[i])) {
+		for (int i = 0; i < size(); i++) {
+			if (!isspace(at(i))) {
 				n++;
 			}
 		}
@@ -18,19 +22,23 @@ typedef struct _letter {
 	}
 };
 
-typedef struct _word {
-	static int count(string input) {
+typedef struct _word : public string {
+	// funkcie
+	_word(string input) : string (input) {
+	}
+
+	int count() {
 		int n = 1;
 
-		for (int i = 0; i < input.size(); i++) {
+		for (int i = 0; i < size(); i++) {
 			// ak je viac medzier nak sa rataju ako edna
-			if (input[i] == ' ' && input[i + 1] != ' ') {
+			if (at(i) == ' ' && at(i + 1) != ' ') {
 				n++;
 			}
 		}
 
 		// ak je "abc efg ", aby bolo n = 2 a ni n = 3
-		if (input[input.size() - 1] == ' ') {
+		if (at(size() - 1) == ' ') {
 			n--;
 		}
 
@@ -38,11 +46,15 @@ typedef struct _word {
 	}
 };
 
-typedef struct _line {
-	static int count(string input) {
+typedef struct _line : public string {
+	// funkcie
+	_line(string input) : string (input) {
+	}
+
+	int count() {
 		int n = 1;
-		for (int i = 0; i < input.size(); i++) {
-			if (input[i] == 10) {
+		for (int i = 0; i < size(); i++) {
+			if (at(i) == 10) {
 				n++;
 			}
 		}
@@ -53,7 +65,8 @@ typedef struct _line {
 
 template <typename T>
 size_t count(string input) {
-	return T::count(input);
+	T result(input);
+	return result.count();
 }
 
 // funkcia na pocitanie pismen
