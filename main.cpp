@@ -37,7 +37,6 @@ int main(int argc, char **argv)
 
 			getline(cin, input);
 
-			//cout << "Pocet pismen v texte je: " << count_letters(input) << endl;
 			cout << "Pocet pismen v texte je: " << count <_letter>(input) << endl;
 		}
 		return 0;
@@ -59,7 +58,6 @@ int main(int argc, char **argv)
 
 			getline(cin, input);
 
-			//cout << "Pocet slov v texte je: " << count_words(input) << endl;
 			cout << "Pocet slov v texte je: " << count <_word>(input) << endl;
 		}
 
@@ -87,7 +85,6 @@ int main(int argc, char **argv)
 				input += ch;
 			}
 			
-			//cout << "Pocet riadkov v texte je: " << count_lines(input)<< endl;
 			cout << "Pocet riadkov v texte je: " << count <_line>(input) << endl;
 		};
 	}
